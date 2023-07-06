@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "DM Sans", sans-serif;
+}
+
+.container {
+    margin: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 3rem 2rem;
+  border: 1px solid #d5dfff;
+  border-radius: 0.5rem;
+
+  max-width: 36rem;
+
+  color: #2f1c6a;
+}
+
+.pricing-card__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card__description {
+  font-size: 1.4rem;
+  font-weight: 100;
+  margin-bottom: 2.4rem;
+}
+
+.pricing-card__discount {
+  font-size: 1.4rem;
+
+  & .original-price {
+    text-decoration: line-through;
+  }
+
+  & .discount {
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+  }
+}
+
+.pricing-card__price {
+  margin: 1.2rem 0 2.4rem;
+  & .price__prefix,
+  .price__suffix {
+    font-size: 2rem;
+    font-weight: 100;
+  }
+
+  & .price__current {
+    font-size: 4.5rem;
+    font-weight: 700;
+  }
+}
+
+.pricing-card__offer {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.pricing-card__renewal-price {
+  font-size: 1.4rem;
+  font-weight: 100;
+  color: #727586;
+  margin: 1.6rem 0 3.2rem;
+}
+
+.pricing-card__button {
+  margin-top: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1.2rem 1.6rem;
+  font-size: 1.6rem;
+
+  min-height: 4.8rem;
+  width: 100%;
+  max-width: 24rem;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.pricing-card__features {
+  width: 100%;
+  margin-bottom: 2.4rem;
+}
+
+.pricing-card__feature-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.pricing-card__feature {
+  font-size: 1.6rem;
+  font-weight: 100;
+  margin-bottom: 1.2rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+/* regarding tooltip */
+
+.feature-tooltip {
+  font-weight: 700;
+  font-size: 1.8rem;
+  display: inline-block;
+  position: relative;
+  text-align: left;
+}
+
+.feature-tooltip .bottom {
+  min-width: 200px;
+  top: 20px;
+  right: 0;
+  padding: 20px;
+  color: #fff;
+  background-color: #673de6;
+  font-weight: normal;
+  font-size: 13px;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 99999999;
+  box-sizing: border-box;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.feature-tooltip:hover .bottom {
+  display: block;
+}
+
+/* regarding toggle button */
+.toggle-content-btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  & i {
+    font-size: 1.8rem;
+  }
+}
+
+/* basically the display of extra will be none, when clicked on the 
+   button we will make it block */
+input[type="checkbox"] {
+  display: none;
+}
+.extra {
+  width: 100%;
+  display: none;
+}
+
+/* when the toggle button is clicked, we will make the extra block */
+.toggle:checked {
+  & ~ .extra {
+    display: block;
+  }
+
+  & ~ label > .toggle-content-btn > .toggle-content-btn__text {
+    visibility: hidden;
+  }
+
+  & ~ label > .toggle-content-btn > .toggle-content-btn__text:after {
+    display: block;
+    content: "See less features";
+    visibility: visible;
+  }
+}
+/* changes colours for components without changing the original component */
+.bg-pink {
+  background-color: #ffe8ef;
+}
+
+.bg-dark-pink {
+  background-color: #fc5185;
+}
+
+.text-pink {
+  color: #d63163;
+}
+
+.text-green {
+  color: #00b090;
+}
+
+.text-yellow {
+  color: #f5a623;
+}
+/* section separator */
+.section-separater {
+  border: 0.5px solid #d5dfff;
+  margin-bottom: 32px;
+  width: 100%;
+}
