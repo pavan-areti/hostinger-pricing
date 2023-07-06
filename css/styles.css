@@ -50,8 +50,7 @@ html {
     width: 30%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 30%;
-    left: 30px;
+    width: 33%;
   }
 }
 
@@ -70,8 +69,7 @@ html {
     width: 30%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 30%;
-    right: 30px;
+    width: 35%;
   }
 }
 
@@ -282,6 +280,9 @@ input[type="checkbox"] {
 }
 
 /* pagination related css */
+.swiper {
+  z-index: unset;
+}
 .mySwiper {
   --add-top: 80px;
   padding: 80px 40px 50px 40px;
@@ -304,12 +305,14 @@ input[type="checkbox"] {
 }
 
 .swiper-button-prev {
+  position: absolute;
   left: 0px;
   right: auto;
   z-index: 999 !important;
 }
 
 .swiper-button-next {
+  position: absolute;
   right: 0px;
   left: auto;
   z-index: 999 !important;
