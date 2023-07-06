@@ -1,14 +1,18 @@
 function toggleContent() {
-    var moreText = document.getElementById("more");
-    var btnText = document.getElementById("myBtn");
+  let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  let checked = document.querySelectorAll('input[type="checkbox"]:checked');
   
-    if (dots.style.display === "none") {
-      dots.style.display = "inline";
-      btnText.innerHTML = "Read more"; 
-      moreText.style.display = "none";
+    if (checked.length === 0) {
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = true;
+        }
+        )
     } else {
-      dots.style.display = "none";
-      btnText.innerHTML = "Read less"; 
-      moreText.style.display = "inline";
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = false;
+        }
+        )
     }
-  }
+  
+
+}
