@@ -2,19 +2,38 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* with this we can adjust the size of the swiper navigation buttons */
+  --swiper-navigation-size: 30px;
 }
 
 html {
   font-size: 62.5%;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 50%;
+  }
   font-family: "DM Sans", sans-serif;
 }
 
+.page-title {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin: 3rem;
+  text-align: center;
+}
+
 .container {
-    margin: 10rem;
+  max-width: 120rem;
+  margin: 2rem auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+
+  @media only screen and (max-width: 600px) {
+    margin: 1rem auto;
+  }
 }
+
 .pricing-card {
   display: flex;
   flex-direction: column;
@@ -27,12 +46,42 @@ html {
   max-width: 36rem;
 
   color: #2f1c6a;
+  transition: all 0.4s ease-in-out;
+}
+
+.pricing-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+}
+
+.product-badge {
+  position: absolute;
+  padding: 1rem 5rem;
+  top: 0;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-radius: 50px;
+
+  &::after {
+    content: "";
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #fc5185;
+    bottom: -6px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%);
+  }
 }
 
 .pricing-card__title {
   font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+
+  text-align: center;
 }
 
 .pricing-card__description {
@@ -184,17 +233,61 @@ input[type="checkbox"] {
     visibility: visible;
   }
 }
+
+/* pagination related css */
+.mySwiper {
+  --add-top: 60px;
+  padding: 60px 40px 50px 40px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+.mySwiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+.mySwiper [class^="swiper-button-"] {
+  top: calc(50% + var(--add-top) / 2);
+}
+.mySwiper .swiper-pagination-bullets {
+  bottom: initial;
+  top: 5px;
+}
+
+.swiper-button-prev {
+  left: 0px;
+  right: auto;
+}
+
+.swiper-button-next {
+  right: 0px;
+  left: auto;
+}
 /* changes colours for components without changing the original component */
 .bg-pink {
   background-color: #ffe8ef;
+}
+
+.bg-violet {
+  background-color: #ebe4ff;
 }
 
 .bg-dark-pink {
   background-color: #fc5185;
 }
 
+.bg-dark-violet {
+  background-color: #673de6;
+}
+
 .text-pink {
   color: #d63163;
+}
+
+.text-violet {
+  color: #673de6;
 }
 
 .text-green {
