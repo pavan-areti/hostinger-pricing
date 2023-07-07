@@ -404,7 +404,7 @@ input[type="checkbox"] {
   }
   .pricing-card__feature {
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 400;
   }
   .pricing-card {
     max-width: 100%;
