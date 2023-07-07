@@ -214,10 +214,21 @@ input[type="checkbox"] {
 }
 
 .extra {
-  width: 100%;
-  display: none;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  /* width: 100%; */
+  transition: all 0.5s ease-in-out;
 }
 
+.extra--open {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  height: 52rem;
+  transition: all 0.5s ease-in-out;
+}
 /* when the toggle button is clicked, we will make the extra block */
 
 .toggle:checked ~ .extra {

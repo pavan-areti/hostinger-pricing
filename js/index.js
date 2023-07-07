@@ -1,23 +1,29 @@
-function toggleContent() {
-  let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  let checked = document.querySelectorAll('input[type="checkbox"]:checked');
-  let btns = document.querySelectorAll(".toggle-content-btn__text");
+let buttons = document.querySelectorAll(".toggle-content-btn");
+let btns = document.querySelectorAll(".toggle-content-btn__text");
 
-  if (checked.length === 0) {
+const toggleContent = () => {
+  let extra = document.querySelectorAll(".extra");
+  let opens = document.querySelectorAll(".extra--open");
+
+  if (opens.length === 0) {
     btns.forEach((btn) => {
       btn.innerHTML =
         'See less features <span><i class="fa fa-angle-up" aria-hidden="true"></i></span>';
     });
-    checkboxes.forEach((checkbox) => {
-      checkbox.checked = true;
+    extra.forEach((extra) => {
+      extra.classList.add("extra--open");
     });
   } else {
     btns.forEach((btn) => {
       btn.innerHTML =
         'See all features <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>';
     });
-    checkboxes.forEach((checkbox) => {
-      checkbox.checked = false;
+    extra.forEach((extra) => {
+      extra.classList.remove("extra--open");
     });
   }
+};
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", toggleContent);
 }
