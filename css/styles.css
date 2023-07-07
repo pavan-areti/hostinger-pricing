@@ -375,3 +375,19 @@ input[type="checkbox"] {
     width: 35%;
   }
 }
+
+@media only screen and (min-width: 1330px) {
+  .cover-left {
+    width: 0;
+  }
+
+  .cover-right {
+    width: 0;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev,
+  .swiper-pagination-bullets {
+    display: none;
+  }
+}
