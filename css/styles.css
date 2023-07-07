@@ -409,13 +409,13 @@ input[type="checkbox"] {
 }
 
 @media only screen and (max-width: 600px) {
-
   .pricing-card__feature {
     font-size: 14px;
     font-weight: 400;
   }
   .pricing-card {
     max-width: 100%;
+    width: 90%;
   }
   .swiper-button-next,
   .swiper-button-prev {
