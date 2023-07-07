@@ -336,7 +336,7 @@ input[type="checkbox"] {
   }
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 600px) {
   .cover-left {
     position: absolute;
     top: 0;
@@ -348,7 +348,7 @@ input[type="checkbox"] {
       #fff 0%,
       rgba(256, 256, 256, 0.4) 100%
     );
-    width: 30%;
+    width: 25%;
   }
 
   .cover-right {
@@ -362,7 +362,7 @@ input[type="checkbox"] {
       #fff 0%,
       rgba(256, 256, 256, 0.4) 100%
     );
-    width: 30%;
+    width: 25%;
   }
 }
 
@@ -372,13 +372,23 @@ input[type="checkbox"] {
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 800px) {
+  .cover-left {
+    width: 30%;
+  }
+
+  .cover-right {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
   .cover-left {
     width: 33%;
   }
 
   .cover-right {
-    width: 35%;
+    width: 33%;
   }
 }
 
@@ -399,9 +409,7 @@ input[type="checkbox"] {
 }
 
 @media only screen and (max-width: 600px) {
-  .pricing-card {
-    width: 80%;
-  }
+
   .pricing-card__feature {
     font-size: 14px;
     font-weight: 400;
