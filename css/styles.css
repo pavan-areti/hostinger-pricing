@@ -81,6 +81,8 @@ html {
   font-size: 1.4rem;
   font-weight: 100;
   margin-bottom: 2.4rem;
+
+  text-align: center;
 }
 
 .pricing-card__discount {
@@ -222,19 +224,6 @@ input[type="checkbox"] {
   display: block;
 }
 
-.toggle:checked ~ label > .toggle-content-btn > .toggle-content-btn__text {
-  visibility: hidden;
-}
-
-.toggle:checked
-  ~ label
-  > .toggle-content-btn
-  > .toggle-content-btn__text:after {
-  display: block;
-  content: "See less features";
-  visibility: visible;
-}
-
 /* pagination related css */
 .swiper {
   z-index: unset;
@@ -267,14 +256,14 @@ input[type="checkbox"] {
 
 .swiper-button-prev {
   position: absolute;
-  left: 0px;
+  left: 15px;
   right: auto;
   z-index: 999 !important;
 }
 
 .swiper-button-next {
   position: absolute;
-  right: 0px;
+  right: 15px;
   left: auto;
   z-index: 999 !important;
 }
@@ -322,7 +311,7 @@ input[type="checkbox"] {
 /* media queries */
 @media only screen and (max-width: 600px) {
   html {
-    font-size: 50%;
+    font-size: 60%;
   }
 
   .container {
@@ -388,6 +377,16 @@ input[type="checkbox"] {
   .swiper-button-next,
   .swiper-button-prev,
   .swiper-pagination-bullets {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .pricing-card {
+    max-width: 100%;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
     display: none;
   }
 }
