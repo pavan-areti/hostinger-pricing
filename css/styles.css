@@ -394,10 +394,22 @@ input[type="checkbox"] {
 
 @media only screen and (max-width: 600px) {
   .pricing-card {
+    width: 80%;
+  }
+  .pricing-card__feature {
+    font-size: 1.4rem;
+  }
+  .pricing-card {
     max-width: 100%;
   }
   .swiper-button-next,
   .swiper-button-prev {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .pricing-card {
+    width: 100%;
   }
 }
