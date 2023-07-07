@@ -8,10 +8,6 @@
 
 html {
   font-size: 62.5%;
-
-  @media only screen and (max-width: 600px) {
-    font-size: 50%;
-  }
   font-family: "DM Sans", sans-serif;
 }
 
@@ -29,48 +25,6 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-
-  @media only screen and (max-width: 600px) {
-    margin: 1rem auto;
-  }
-}
-
-.cover-left {
-  @media only screen and (min-width: 750px) {
-    position: absolute;
-    top: 0;
-    left: 0px;
-    height: 100%;
-    z-index: 5;
-    background-image: linear-gradient(
-      to right,
-      #fff 0%,
-      rgba(256, 256, 256, 0.4) 100%
-    );
-    width: 30%;
-  }
-  @media only screen and (min-width: 1200px) {
-    width: 33%;
-  }
-}
-
-.cover-right {
-  @media only screen and (min-width: 750px) {
-    position: absolute;
-    top: 0;
-    right: 0px;
-    height: 100%;
-    z-index: 5;
-    background-image: linear-gradient(
-      to left,
-      #fff 0%,
-      rgba(256, 256, 256, 0.4) 100%
-    );
-    width: 30%;
-  }
-  @media only screen and (min-width: 1200px) {
-    width: 35%;
-  }
 }
 
 .pricing-card {
@@ -90,9 +44,6 @@ html {
 
 .pricing-card:hover {
   transform: scale(1.02);
-  @media only screen and (max-width: 1000px) {
-    transform: scale(1);
-  }
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -105,17 +56,17 @@ html {
   font-size: 1.8rem;
   font-weight: 700;
   border-radius: 50px;
+}
 
-  &::after {
-    content: "";
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 6px solid #fc5185;
-    bottom: -6px;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%);
-  }
+.product-badge::after {
+  content: "";
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #fc5185;
+  bottom: -6px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
 }
 
 .pricing-card__title {
@@ -134,30 +85,31 @@ html {
 
 .pricing-card__discount {
   font-size: 1.4rem;
+}
 
-  & .original-price {
-    text-decoration: line-through;
-  }
+.pricing-card__discount .original-price {
+  text-decoration: line-through;
+}
 
-  & .discount {
-    font-weight: 700;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-  }
+.pricing-card__discount .discount {
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
 }
 
 .pricing-card__price {
   margin: 1.2rem 0 2.4rem;
-  & .price__prefix,
-  .price__suffix {
-    font-size: 2rem;
-    font-weight: 100;
-  }
+}
 
-  & .price__current {
-    font-size: 4.5rem;
-    font-weight: 700;
-  }
+.pricing-card__price .price__prefix,
+.price__suffix {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.pricing-card__price .price__current {
+  font-size: 4.5rem;
+  font-weight: 700;
 }
 
 .pricing-card__offer {
@@ -247,9 +199,10 @@ html {
   font-size: 1.6rem;
   font-weight: 700;
   cursor: pointer;
-  & i {
-    font-size: 1.8rem;
-  }
+}
+
+.toggle-content-btn i {
+  font-size: 1.8rem;
 }
 
 /* basically the display of extra will be none, when clicked on the 
@@ -257,48 +210,56 @@ html {
 input[type="checkbox"] {
   display: none;
 }
+
 .extra {
   width: 100%;
   display: none;
 }
 
 /* when the toggle button is clicked, we will make the extra block */
-.toggle:checked {
-  & ~ .extra {
-    display: block;
-  }
 
-  & ~ label > .toggle-content-btn > .toggle-content-btn__text {
-    visibility: hidden;
-  }
+.toggle:checked ~ .extra {
+  display: block;
+}
 
-  & ~ label > .toggle-content-btn > .toggle-content-btn__text:after {
-    display: block;
-    content: "See less features";
-    visibility: visible;
-  }
+.toggle:checked ~ label > .toggle-content-btn > .toggle-content-btn__text {
+  visibility: hidden;
+}
+
+.toggle:checked
+  ~ label
+  > .toggle-content-btn
+  > .toggle-content-btn__text:after {
+  display: block;
+  content: "See less features";
+  visibility: visible;
 }
 
 /* pagination related css */
 .swiper {
   z-index: unset;
 }
+
 .mySwiper {
   --add-top: 80px;
   padding: 80px 40px 50px 40px;
+  max-width: 100%;
 }
 
 .swiper-slide {
   display: flex;
   justify-content: center;
 }
+
 .mySwiper .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
 }
+
 .mySwiper [class^="swiper-button-"] {
   top: calc(50% + var(--add-top) / 2);
 }
+
 .mySwiper .swiper-pagination-bullets {
   bottom: initial;
   top: 5px;
@@ -317,6 +278,7 @@ input[type="checkbox"] {
   left: auto;
   z-index: 999 !important;
 }
+
 /* changes colours for components without changing the original component */
 .bg-pink {
   background-color: #ffe8ef;
@@ -349,9 +311,67 @@ input[type="checkbox"] {
 .text-yellow {
   color: #f5a623;
 }
+
 /* section separator */
 .section-separater {
   border: 0.5px solid #d5dfff;
   margin-bottom: 32px;
   width: 100%;
+}
+
+/* media queries */
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+
+  .container {
+    margin: 1rem auto;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .cover-left {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    z-index: 5;
+    background-image: linear-gradient(
+      to right,
+      #fff 0%,
+      rgba(256, 256, 256, 0.4) 100%
+    );
+    width: 30%;
+  }
+
+  .cover-right {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    height: 100%;
+    z-index: 5;
+    background-image: linear-gradient(
+      to left,
+      #fff 0%,
+      rgba(256, 256, 256, 0.4) 100%
+    );
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .pricing-card:hover {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .cover-left {
+    width: 33%;
+  }
+
+  .cover-right {
+    width: 35%;
+  }
 }
