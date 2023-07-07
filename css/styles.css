@@ -11,6 +11,10 @@ html {
   font-family: "DM Sans", sans-serif;
 }
 
+b {
+  font-weight: bold;
+}
+
 .page-title {
   font-size: 3.6rem;
   font-weight: 700;
